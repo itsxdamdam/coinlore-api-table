@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Coin } from "./Coin";
+import Pagination from "./Pagination"
 
 const Table = () => {
   const [loading, setLoading] = useState(true);
@@ -58,6 +59,8 @@ const Table = () => {
           />
         ))}
       </table>
+
+      <Pagination />
     </div>
   );
 };
