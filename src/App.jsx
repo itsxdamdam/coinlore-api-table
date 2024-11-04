@@ -5,7 +5,7 @@ import CustomCursor from "./components/CustomCursor";
 
 const App = () => {
   return (
-    <div className="bg-neutral-200 p-10 w-full h-full">
+    <div className="bg-neutral-200 sm:p-10 w-full h-full">
       <CustomCursor />
       <Table />
     </div>

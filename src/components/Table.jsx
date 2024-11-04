@@ -1,17 +1,31 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Coin } from "./Coin";
-import Pagination from "./Pagination"
+import Pagination from "./Pagination";
+
+// const getScreenWidth = () => {
+//   const { innerWidth: width, innerHeight: height } = window;
+
+//   return width, height;
+// };
 
 const Table = () => {
   const [loading, setLoading] = useState(true);
   const [coinList, setCoinList] = useState([]);
   const [error, setError] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1)
-  const itemsPerPage = 10
+  const [currentPage, setCurrentPage] = useState(1);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  const itemsPerPage = 10;
 
   useEffect(() => {
     setLoading(true);
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
     axios
       .get("https://api.coinlore.net/api/tickers/")
       .then(({ data }) => {
@@ -22,6 +36,8 @@ const Table = () => {
         setLoading(false);
         setError(err.message || err);
       });
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   if (error) {
@@ -34,13 +50,13 @@ const Table = () => {
 
   const lastCoin = currentPage * itemsPerPage;
   const firstCoin = lastCoin - itemsPerPage;
-  const currentCoins = coinList.slice(firstCoin, lastCoin)
+  const currentCoins = coinList.slice(firstCoin, lastCoin);
 
   return (
-    <div className="w-6/12 mx-auto">
+    <div className="lg:w-6/12 sm:w-full mx-auto mt-5">
       <table className="text-left w-full h-full">
         <thead>
-          <tr className="w-full h-full">
+          <tr className={screenWidth < 640 ? "hidden" : " "}>
             <th className="p-3">💰 Coin</th>
             <th className="p-3">📄 Code</th>
             <th className="p-3">🤑 Price</th>
@@ -60,7 +76,12 @@ const Table = () => {
         ))}
       </table>
 
-      <Pagination setCurrentPage={setCurrentPage} coinList={coinList} currentPage={currentPage} itemsPerPage={itemsPerPage}/>
+      <Pagination
+        setCurrentPage={setCurrentPage}
+        coinList={coinList}
+        currentPage={currentPage}
+        itemsPerPage={itemsPerPage}
+      />
     </div>
   );
 };
