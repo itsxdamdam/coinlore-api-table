@@ -60,7 +60,7 @@ const Table = () => {
         ))}
       </table>
 
-      <Pagination />
+      <Pagination setCurrentPage={setCurrentPage} coinList={coinList} currentPage={currentPage} itemsPerPage={itemsPerPage}/>
     </div>
   );
 };
