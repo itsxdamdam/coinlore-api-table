@@ -52,7 +52,8 @@ const Table = () => {
   const firstCoin = lastCoin - itemsPerPage;
   const currentCoins = coinList.slice(firstCoin, lastCoin);
 
-  {if(loading) return "loading..."}
+  {if(loading) return <div className="mx-auto font-black w-6/12 text-center my-8">LOADING...</div>}
+
   return (
     <div className="lg:w-6/12 sm:w-full mx-auto mt-5">
       <table className="text-left w-full h-full">
