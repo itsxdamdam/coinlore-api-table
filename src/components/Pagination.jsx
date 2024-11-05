@@ -24,7 +24,7 @@ const Pagination = ({
     <div className="flex justify-between items-center font-bold">
       <button
         onClick={handlePreviousPage}
-        className={currentPage === 1 ? "invisible" : "hover:border-yellow-200 border-4 pr-2"}
+        className={currentPage === 1 ? "invisible" : "hover:border-yellow-200 hover:border-4 pr-2"}
       >
         <FontAwesomeIcon icon={faArrowLeft} className="px-1" />
         Previous
@@ -34,7 +34,7 @@ const Pagination = ({
         className={
           currentPage === Math.ceil(coinList.length / itemsPerPage)
             ? "invisible"
-            : "hover:border-yellow-200 border-4 pr-2"
+            : "hover:border-yellow-200 hover:border-4 pr-2"
         }
       >
         Next
