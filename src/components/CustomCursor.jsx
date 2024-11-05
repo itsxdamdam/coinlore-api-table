@@ -5,7 +5,6 @@ const CustomCursor = () => {
 
   useEffect(() => {
     const updatePosition = (e) => {
-      console.log(e);
       setPosition({ x: e.clientX, y: e.clientY });
     };
 
