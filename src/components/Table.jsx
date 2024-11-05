@@ -3,11 +3,6 @@ import axios from "axios";
 import { Coin } from "./Coin";
 import Pagination from "./Pagination";
 
-// const getScreenWidth = () => {
-//   const { innerWidth: width, innerHeight: height } = window;
-
-//   return width, height;
-// };
 
 const Table = () => {
   const [loading, setLoading] = useState(true);
@@ -67,7 +62,6 @@ const Table = () => {
           </tr>
         </thead>
         {currentCoins.map((coin, index) => (
-          // {index === 0 || index % 2 }
           <Coin
             key={coin.id}
             name={coin.name}
@@ -85,7 +79,6 @@ const Table = () => {
         coinList={coinList}
         currentPage={currentPage}
         itemsPerPage={itemsPerPage}
-        // transition={transition}
         setTransition={setTransition}
       />
     </div>
