@@ -14,6 +14,7 @@ const Table = () => {
   const [coinList, setCoinList] = useState([]);
   const [error, setError] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [transition, setTransition] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   const itemsPerPage = 10;
@@ -74,6 +75,7 @@ const Table = () => {
             price={coin.price_usd}
             totalSupply={coin.tsupply}
             index={index}
+            transition={transition}
           />
         ))}
       </table>
@@ -83,6 +85,8 @@ const Table = () => {
         coinList={coinList}
         currentPage={currentPage}
         itemsPerPage={itemsPerPage}
+        // transition={transition}
+        setTransition={setTransition}
       />
     </div>
   );

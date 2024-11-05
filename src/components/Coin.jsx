@@ -1,5 +1,5 @@
-export const Coin = ({ name, symbol, price, totalSupply, index }) => (
-  <tbody className="w-full font-medium">
+export const Coin = ({ name, symbol, price, totalSupply, index, transition }) => (
+  <tbody className={transition ? "fade" : "w-full font-medium"}>
     <tr
       className={
         index % 2
