@@ -57,7 +57,7 @@ const Table = () => {
     <div className="lg:w-6/12 sm:w-full mx-auto mt-5">
       <table className="text-left w-full h-full">
         <thead>
-          <tr className={screenWidth < 640 ? "hidden" : " "}>
+          <tr className={screenWidth < 640 ? "hidden" : "w-full"}>
             <th className="p-3">💰 Coin</th>
             <th className="p-3">📄 Code</th>
             <th className="p-3">🤑 Price</th>

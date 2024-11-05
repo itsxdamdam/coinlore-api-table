@@ -18,7 +18,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  cursor: none;
+  /* cursor: none; */
 }
 
 html, body, #root, #root>div {
@@ -26,11 +26,6 @@ html, body, #root, #root>div {
   height: 100%;
   background-color:  rgb(229 229 229);
 }
-
-/* .table {
-  width: 500px;
-  height: 800px;
-} */
 
 .custom-cursor {
   position: fixed;
