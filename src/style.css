@@ -2,23 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer components {
-  .search-input {
-    @apply w-60 mb-5 block;
-  }
-} */
-
-/* @layer utilities {
-  .grayed-out-disabled {
-    @apply disabled:opacity-50;
-  }
-} */
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* cursor: none; */
+  cursor: none;
 }
 
 html, body, #root, #root>div {
